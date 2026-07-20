@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import {
   Github, Linkedin, Twitter, Mail, Phone,
   ArrowRight, CheckCircle2, MessageSquare,
@@ -22,25 +23,43 @@ const contactInfo = [
   {
     icon: <Mail className="w-5 h-5" />,
     label: 'Email',
-    value: 'himanshubaghelofficial@gmail.com',
-    href: 'mailto:himanshubaghelofficial@gmail.com',
+    value: 'himanshupalsingh6@gmail.com',
+    href: 'mailto:himanshupalsingh6@gmail.com',
     color: 'text-blue-400',
     bg: 'bg-blue-500/10 border-blue-500/20',
     hoverBg: 'hover:bg-blue-500/20 hover:border-blue-500/40',
   },
   {
-    icon: <MessageSquare className="w-5 h-5" />,
-    label: 'WhatsApp',
-    value: 'Chat on WhatsApp',
-    href: 'https://wa.me/91XXXXXXXXXX',
+    icon: <Phone className="w-5 h-5" />,
+    label: 'Phone / WhatsApp',
+    value: '+91 92587 30561',
+    href: 'https://wa.me/919258730561',
     color: 'text-green-400',
     bg: 'bg-green-500/10 border-green-500/20',
     hoverBg: 'hover:bg-green-500/20 hover:border-green-500/40',
   },
   {
+    icon: <Phone className="w-5 h-5" />,
+    label: 'Alternate Number',
+    value: '+91 99978 74502',
+    href: 'tel:+919997874502',
+    color: 'text-cyan-400',
+    bg: 'bg-cyan-500/10 border-cyan-500/20',
+    hoverBg: 'hover:bg-cyan-500/20 hover:border-cyan-500/40',
+  },
+  {
+    icon: <MessageSquare className="w-5 h-5" />,
+    label: 'WhatsApp Chat',
+    value: 'Message on WhatsApp',
+    href: 'https://wa.me/919258730561',
+    color: 'text-emerald-400',
+    bg: 'bg-emerald-500/10 border-emerald-500/20',
+    hoverBg: 'hover:bg-emerald-500/20 hover:border-emerald-500/40',
+  },
+  {
     icon: <MapPin className="w-5 h-5" />,
     label: 'Location',
-    value: 'India',
+    value: 'Kasganj, Uttar Pradesh, India',
     href: null,
     color: 'text-purple-400',
     bg: 'bg-purple-500/10 border-purple-500/20',
@@ -97,14 +116,33 @@ export function Contact() {
     reset,
   } = useForm<FormData>({ resolver: zodResolver(formSchema) });
 
-  const onSubmit = (_data: FormData) => {
+  const onSubmit = (data: FormData) => {
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      reset();
-      setTimeout(() => setIsSuccess(false), 6000);
-    }, 1800);
+
+    const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID  as string;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+    const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  as string;
+
+    const templateParams = {
+      from_name:    data.name,
+      from_email:   data.email,
+      subject:      data.subject,
+      message:      data.message,
+      to_email:     'himanshupalsingh6@gmail.com',
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        reset();
+        setTimeout(() => setIsSuccess(false), 6000);
+      })
+      .catch(() => {
+        setIsSubmitting(false);
+        alert('Message send karne mein problem aayi. Please directly email karein: himanshupalsingh6@gmail.com');
+      });
   };
 
   return (
