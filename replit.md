@@ -1,6 +1,6 @@
-# [Project name]
+# Himanshu Baghel Portfolio
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A personal portfolio website for Himanshu Baghel, showcasing services, tech stack, projects, and a contact form.
 
 ## Run & Operate
 
