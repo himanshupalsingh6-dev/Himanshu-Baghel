@@ -1,67 +1,92 @@
 import { useRef } from 'react';
-import { motion, useInView, useMotionValue, useTransform } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { ExternalLink, Github, Zap, Rocket, Globe, Bot, Layout } from 'lucide-react';
 
 const projects = [
   {
-    title: "NeuraBoard",
-    description: "AI-powered project management dashboard with predictive task scheduling.",
-    tags: ["React", "OpenAI", "Node.js"],
-    color: "from-blue-500/20 to-cyan-500/20",
-    border: "group-hover:border-blue-500/50"
+    title: "QuickPress",
+    subtitle: "Smart Laundry & On-Demand Service Platform",
+    description: "An all-in-one laundry and home service platform enabling customers to book pickup & delivery, track orders in real time, and enjoy a seamless digital experience. Includes dedicated apps for Customers, Partners, Riders, and Admin.",
+    highlights: ["Real-time Order Tracking", "Multi-Role Dashboard", "Live Notifications", "Secure Authentication", "Mobile-Friendly Design"],
+    tags: ["React", "Next.js", "Firebase", "MongoDB", "Node.js", "Express", "Tailwind CSS"],
+    icon: <Zap className="w-6 h-6" />,
+    color: "from-blue-500/25 to-cyan-500/15",
+    glow: "rgba(59,130,246,0.15)",
+    border: "group-hover:border-blue-500/40",
+    iconBg: "bg-blue-500/15 text-blue-400",
+    tagColor: "bg-blue-500/10 border-blue-500/20 text-blue-300",
+    badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
   },
   {
-    title: "CryptoPulse",
-    description: "Real-time crypto tracking & portfolio tool with WebSocket integrations.",
-    tags: ["Next.js", "WebSocket", "Chart.js"],
-    color: "from-purple-500/20 to-pink-500/20",
-    border: "group-hover:border-purple-500/50"
+    title: "Zenovix Technologies",
+    subtitle: "Digital Agency & Technology Solutions",
+    description: "A digital agency focused on building premium websites, web applications, AI-powered solutions, and automation tools for startups and businesses — helping brands establish a strong online presence with modern technology.",
+    highlights: ["Business Websites", "Web Applications", "Android Applications", "AI Automation", "WhatsApp Automation"],
+    tags: ["React", "Next.js", "TypeScript", "Firebase", "MongoDB", "Tailwind CSS"],
+    icon: <Rocket className="w-6 h-6" />,
+    color: "from-purple-500/25 to-violet-500/15",
+    glow: "rgba(139,92,246,0.15)",
+    border: "group-hover:border-purple-500/40",
+    iconBg: "bg-purple-500/15 text-purple-400",
+    tagColor: "bg-purple-500/10 border-purple-500/20 text-purple-300",
+    badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
   },
   {
-    title: "ShipFast CLI",
-    description: "Developer CLI tool to scaffold full-stack applications in seconds.",
-    tags: ["Node.js", "TypeScript", "CLI"],
-    color: "from-emerald-500/20 to-teal-500/20",
-    border: "group-hover:border-emerald-500/50"
+    title: "Business Website Collection",
+    subtitle: "Professional Websites for Modern Businesses",
+    description: "A collection of responsive and SEO-friendly websites for diverse industries — schools, restaurants, hospitals, coaching institutes, and local businesses — built with premium UI/UX and high-performance architecture.",
+    highlights: ["Premium UI/UX", "Mobile Responsive", "Fast Performance", "SEO Optimized", "Contact & Inquiry Forms"],
+    tags: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+    icon: <Globe className="w-6 h-6" />,
+    color: "from-emerald-500/25 to-teal-500/15",
+    glow: "rgba(16,185,129,0.15)",
+    border: "group-hover:border-emerald-500/40",
+    iconBg: "bg-emerald-500/15 text-emerald-400",
+    tagColor: "bg-emerald-500/10 border-emerald-500/20 text-emerald-300",
+    badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
   },
   {
-    title: "MindMap Pro",
-    description: "Collaborative mind-mapping web application with real-time multiplayer.",
-    tags: ["React", "Firebase", "Canvas API"],
-    color: "from-orange-500/20 to-red-500/20",
-    border: "group-hover:border-orange-500/50"
+    title: "AI Automation Solutions",
+    subtitle: "Smart Business Automation",
+    description: "Custom AI-powered automation systems that simplify repetitive business tasks — from customer support and lead management to WhatsApp communication and workflow automation.",
+    highlights: ["AI Chatbots", "WhatsApp Automation", "Lead Management", "Business Workflows", "Productivity Tools"],
+    tags: ["AI APIs", "Node.js", "Firebase", "JavaScript"],
+    icon: <Bot className="w-6 h-6" />,
+    color: "from-orange-500/25 to-amber-500/15",
+    glow: "rgba(249,115,22,0.15)",
+    border: "group-hover:border-orange-500/40",
+    iconBg: "bg-orange-500/15 text-orange-400",
+    tagColor: "bg-orange-500/10 border-orange-500/20 text-orange-300",
+    badgeColor: "bg-orange-500/10 text-orange-400 border-orange-500/20",
   },
   {
-    title: "StoreKit",
-    description: "Headless e-commerce engine designed for modern indie brands.",
-    tags: ["Next.js", "Stripe", "Sanity"],
-    color: "from-indigo-500/20 to-blue-500/20",
-    border: "group-hover:border-indigo-500/50"
+    title: "Portfolio & Landing Pages",
+    subtitle: "Modern Personal & Business Branding",
+    description: "A collection of premium portfolios and landing pages built with clean design, smooth animations, and high-performance architecture — helping individuals and businesses create a powerful digital presence.",
+    highlights: ["Modern Design", "Interactive Animations", "Fast Loading", "Responsive Layout", "SEO Ready"],
+    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    icon: <Layout className="w-6 h-6" />,
+    color: "from-fuchsia-500/25 to-pink-500/15",
+    glow: "rgba(217,70,239,0.15)",
+    border: "group-hover:border-fuchsia-500/40",
+    iconBg: "bg-fuchsia-500/15 text-fuchsia-400",
+    tagColor: "bg-fuchsia-500/10 border-fuchsia-500/20 text-fuchsia-300",
+    badgeColor: "bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20",
   },
-  {
-    title: "DevLink",
-    description: "Developer portfolio builder with premium customizable templates.",
-    tags: ["React", "Tailwind", "Framer Motion"],
-    color: "from-fuchsia-500/20 to-purple-500/20",
-    border: "group-hover:border-fuchsia-500/50"
-  }
 ];
 
-function ProjectCard({ project, index }: { project: any, index: number }) {
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const rotateX = useTransform(y, [-120, 120], [8, -8]);
+  const rotateY = useTransform(x, [-120, 120], [-8, 8]);
 
-  const rotateX = useTransform(y, [-100, 100], [10, -10]);
-  const rotateY = useTransform(x, [-100, 100], [-10, 10]);
-
-  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    x.set(event.clientX - centerX);
-    y.set(event.clientY - centerY);
+    x.set(e.clientX - (rect.left + rect.width / 2));
+    y.set(e.clientY - (rect.top + rect.height / 2));
   }
 
   function handleMouseLeave() {
@@ -74,53 +99,80 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{
-        perspective: 1000,
-      }}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.21, 1.02, 0.73, 1] }}
+      style={{ perspective: 1000 }}
     >
       <motion.div
-        style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
-        }}
-        className={`glass-card p-6 md:p-8 h-full flex flex-col group cursor-pointer transition-colors duration-500 ${project.border}`}
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        className={`glass-card h-full flex flex-col group cursor-default transition-all duration-500 ${project.border} overflow-hidden`}
       >
-        <div 
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{ transform: "translateZ(-10px)" }}
-        >
-          <div className={`w-full h-full bg-gradient-to-br ${project.color} blur-2xl`} />
-        </div>
+        {/* Hover glow layer */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+          style={{ background: `radial-gradient(ellipse at 50% 0%, ${project.glow} 0%, transparent 70%)` }}
+        />
 
-        <div className="relative z-10 flex flex-col h-full" style={{ transform: "translateZ(30px)" }}>
-          <div className="flex justify-between items-start mb-6">
-            <h3 className="text-2xl font-display font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-400 transition-all">
-              {project.title}
-            </h3>
-            <div className="flex gap-2">
-              <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors">
-                <Github size={18} />
+        {/* Top gradient strip */}
+        <div className={`absolute top-0 inset-x-0 h-px bg-gradient-to-r ${project.color} opacity-60`} />
+
+        <div className="relative z-10 flex flex-col h-full p-6 md:p-7" style={{ transform: "translateZ(20px)" }}>
+
+          {/* Header */}
+          <div className="flex items-start justify-between gap-4 mb-5">
+            <div className="flex items-center gap-3">
+              <div className={`p-2.5 rounded-xl ${project.iconBg} shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                {project.icon}
+              </div>
+              <div>
+                <h3 className="text-lg font-display font-bold text-white leading-tight">{project.title}</h3>
+                <p className="text-xs text-slate-500 mt-0.5 leading-snug">{project.subtitle}</p>
+              </div>
+            </div>
+            <div className="flex gap-1.5 shrink-0">
+              <a
+                href="#"
+                data-testid={`link-github-${index}`}
+                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
+              >
+                <Github size={15} />
               </a>
-              <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors">
-                <ExternalLink size={18} />
+              <a
+                href="#"
+                data-testid={`link-external-${index}`}
+                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
+              >
+                <ExternalLink size={15} />
               </a>
             </div>
           </div>
-          
-          <p className="text-slate-400 mb-8 flex-grow">
+
+          {/* Description */}
+          <p className="text-sm text-slate-400 leading-relaxed mb-5 flex-grow">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 mt-auto">
-            {project.tags.map((tag: string, i: number) => (
-              <span 
-                key={i} 
-                className="text-xs font-medium px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300"
+          {/* Highlights */}
+          <div className="flex flex-wrap gap-1.5 mb-5">
+            {project.highlights.map((h, i) => (
+              <span
+                key={i}
+                className={`inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg border ${project.badgeColor}`}
+              >
+                <span className="w-1 h-1 rounded-full bg-current opacity-70 inline-block" />
+                {h}
+              </span>
+            ))}
+          </div>
+
+          {/* Tech tags */}
+          <div className="pt-4 border-t border-white/5 flex flex-wrap gap-1.5 mt-auto">
+            {project.tags.map((tag, i) => (
+              <span
+                key={i}
+                className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${project.tagColor} bg-white/5`}
               >
                 {tag}
               </span>
@@ -136,20 +188,39 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 relative z-10 bg-[#050505]">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
+        >
           <div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Selected Work</h2>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-slate-400 uppercase tracking-widest mb-6">
+              <Rocket className="w-3 h-3 text-purple-400" />
+              Featured Work
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Selected Projects</h2>
             <p className="text-lg text-slate-400 max-w-xl">
-              A collection of products I've built, focusing on clean code, exceptional user experiences, and solving real problems.
+              Real products built to solve real problems — focused on clean code, exceptional UX, and lasting impact.
             </p>
           </div>
-          <a href="#" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-2 group transition-colors">
-            View Github Profile
-            <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="link-github-profile"
+            className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-2 group transition-colors shrink-0"
+          >
+            View GitHub Profile
+            <ExternalLink size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} index={idx} />
           ))}

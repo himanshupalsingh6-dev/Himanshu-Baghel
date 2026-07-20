@@ -1,0 +1,91 @@
+# Featured Projects
+
+## 🚀 QuickPress
+
+**Smart Laundry & On-Demand Service Platform**
+
+QuickPress is an all-in-one laundry and home service platform that enables customers to book pickup and delivery services, track orders in real time, and enjoy a seamless digital experience. The platform includes dedicated applications for Customers, Partners, Riders, and Admin.
+
+**Highlights**
+
+* Real-time Order Tracking
+* Multi-Role Dashboard
+* Live Notifications
+* Secure Authentication
+* Modern UI/UX
+* Mobile-Friendly Design
+
+**Tech Stack:** React, Next.js, Firebase, MongoDB, Node.js, Express, Tailwind CSS
+
+---
+
+## 💼 Zenovix Technologies
+
+**Digital Agency & Technology Solutions**
+
+Zenovix Technologies is a digital agency focused on building premium websites, web applications, AI-powered solutions, and automation tools for startups and businesses. The goal is to help brands establish a strong online presence with modern technology.
+
+**Services**
+
+* Business Websites
+* Portfolio Websites
+* Web Applications
+* Android Applications
+* AI Automation
+* WhatsApp Automation
+
+**Tech Stack:** React, Next.js, TypeScript, Firebase, MongoDB, Tailwind CSS
+
+---
+
+## 🌐 Business Website Collection
+
+**Professional Websites for Modern Businesses**
+
+A collection of responsive and SEO-friendly websites designed for different industries, including schools, restaurants, hospitals, coaching institutes, and local businesses.
+
+**Highlights**
+
+* Premium UI/UX
+* Mobile Responsive
+* Fast Performance
+* SEO Optimized
+* Contact & Inquiry Forms
+
+**Tech Stack:** HTML, CSS, JavaScript, React, Tailwind CSS
+
+---
+
+## 🤖 AI Automation Solutions
+
+**Smart Business Automation**
+
+Custom AI-powered automation systems that simplify repetitive business tasks such as customer support, lead management, WhatsApp communication, and workflow automation.
+
+**Highlights**
+
+* AI Chatbots
+* WhatsApp Automation
+* Lead Management
+* Business Workflows
+* Productivity Tools
+
+**Tech Stack:** AI APIs, Node.js, Firebase, JavaScript
+
+---
+
+## 📱 Portfolio & Landing Pages
+
+**Modern Personal & Business Branding**
+
+A collection of premium portfolios and landing pages built with clean design, smooth animations, and high-performance architecture to help individuals and businesses create a strong digital presence.
+
+**Highlights**
+
+* Modern Design
+* Interactive Animations
+* Fast Loading
+* Responsive Layout
+* SEO Ready
+
+**Tech Stack:** Next.js, React, Tailwind CSS, Framer Motion
