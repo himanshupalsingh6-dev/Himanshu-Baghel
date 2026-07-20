@@ -14,6 +14,7 @@ export function Navbar() {
     { name: 'Businesses', href: '#businesses' },
     { name: 'Services', href: '#services' },
     { name: 'Tech Stack', href: '#tech' },
+    { name: 'Social', href: '#social' },
     { name: 'Contact', href: '#contact' },
   ];
 

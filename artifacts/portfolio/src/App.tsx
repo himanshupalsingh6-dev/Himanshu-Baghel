@@ -9,6 +9,7 @@ import { Businesses } from './components/Businesses';
 import { Services } from './components/Services';
 import { TechStack } from './components/TechStack';
 import { Contact } from './components/Contact';
+import { SocialMedia } from './components/SocialMedia';
 import { Footer } from './components/Footer';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsAndConditions } from './pages/TermsAndConditions';
@@ -56,6 +57,7 @@ function Home() {
         <Businesses />
         <Services />
         <TechStack />
+        <SocialMedia />
         <Contact />
       </main>
       <Footer />
