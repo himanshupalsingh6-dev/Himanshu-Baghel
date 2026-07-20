@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import {
   Github, Linkedin, Twitter, Mail, Phone,
   ArrowRight, CheckCircle2, MessageSquare,
@@ -116,33 +115,23 @@ export function Contact() {
     reset,
   } = useForm<FormData>({ resolver: zodResolver(formSchema) });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-
-    const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID  as string;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
-    const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  as string;
-
-    const templateParams = {
-      from_name:    data.name,
-      from_email:   data.email,
-      subject:      data.subject,
-      message:      data.message,
-      to_email:     'himanshupalsingh6@gmail.com',
-    };
-
-    emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
-      .then(() => {
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        reset();
-        setTimeout(() => setIsSuccess(false), 6000);
-      })
-      .catch(() => {
-        setIsSubmitting(false);
-        alert('Message send karne mein problem aayi. Please directly email karein: himanshupalsingh6@gmail.com');
+    try {
+      const res = await fetch(`${import.meta.env.BASE_URL}api/contact`.replace('//', '/'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
+      if (!res.ok) throw new Error('Server error');
+      setIsSuccess(true);
+      reset();
+      setTimeout(() => setIsSuccess(false), 6000);
+    } catch {
+      alert('Message send nahi ho saka. Seedha email karein: himanshupalsingh6@gmail.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
