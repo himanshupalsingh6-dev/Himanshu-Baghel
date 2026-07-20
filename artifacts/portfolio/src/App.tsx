@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
-import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
@@ -46,7 +45,6 @@ function App() {
 
   return (
     <div className="bg-[#050505] min-h-screen text-slate-200 font-sans selection:bg-blue-500/30 overflow-hidden">
-      <Navbar />
       <main>
         <Hero />
         <About />
