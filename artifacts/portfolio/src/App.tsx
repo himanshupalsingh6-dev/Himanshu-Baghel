@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Switch, Route } from 'wouter';
 import Lenis from 'lenis';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -9,12 +10,14 @@ import { Services } from './components/Services';
 import { TechStack } from './components/TechStack';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsAndConditions } from './pages/TermsAndConditions';
 
-function App() {
+function Home() {
   useEffect(() => {
     document.title = "Himanshu Baghel | Founder · Developer · Entrepreneur";
     document.documentElement.classList.add('dark');
-    
+
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');
@@ -57,6 +60,21 @@ function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
+
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-and-conditions" component={TermsAndConditions} />
+      <Route component={Home} />
+    </Switch>
   );
 }
 
