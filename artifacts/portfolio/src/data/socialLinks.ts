@@ -86,12 +86,6 @@ export const businessSocials: BusinessSocial[] = [
         color: { icon: "text-pink-400", hoverBg: "hover:bg-pink-500/15", hoverBorder: "hover:border-pink-400/60", glow: "hover:shadow-pink-500/30" },
       },
       {
-        id: "linkedin",
-        label: "LinkedIn",
-        href: "https://linkedin.com/company/zenovix",
-        color: { icon: "text-blue-400", hoverBg: "hover:bg-blue-500/15", hoverBorder: "hover:border-blue-400/60", glow: "hover:shadow-blue-500/30" },
-      },
-      {
         id: "facebook",
         label: "Facebook",
         href: "https://www.facebook.com/share/1DGP84mESQ/",
@@ -173,12 +167,6 @@ export const businessSocials: BusinessSocial[] = [
         label: "X (Twitter)",
         href: "https://x.com/BeatGam04205970",
         color: { icon: "text-slate-300", hoverBg: "hover:bg-white/10", hoverBorder: "hover:border-white/30", glow: "hover:shadow-white/20" },
-      },
-      {
-        id: "linkedin",
-        label: "LinkedIn",
-        href: "https://linkedin.com/company/quickpress",
-        color: { icon: "text-blue-400", hoverBg: "hover:bg-blue-500/15", hoverBorder: "hover:border-blue-400/60", glow: "hover:shadow-blue-500/30" },
       },
       {
         id: "whatsapp",
