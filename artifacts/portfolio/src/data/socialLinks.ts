@@ -82,7 +82,7 @@ export const businessSocials: BusinessSocial[] = [
       {
         id: "instagram",
         label: "Instagram",
-        href: "https://instagram.com/zenovix",
+        href: "https://www.instagram.com/who_rishab_/",
         color: { icon: "text-pink-400", hoverBg: "hover:bg-pink-500/15", hoverBorder: "hover:border-pink-400/60", glow: "hover:shadow-pink-500/30" },
       },
       {
@@ -94,25 +94,25 @@ export const businessSocials: BusinessSocial[] = [
       {
         id: "facebook",
         label: "Facebook",
-        href: "https://facebook.com/zenovix",
+        href: "https://www.facebook.com/share/1DGP84mESQ/",
         color: { icon: "text-blue-500", hoverBg: "hover:bg-blue-600/15", hoverBorder: "hover:border-blue-500/60", glow: "hover:shadow-blue-600/30" },
       },
       {
         id: "x",
         label: "X (Twitter)",
-        href: "https://x.com/zenovix",
+        href: "https://x.com/BeatGam04205970",
         color: { icon: "text-slate-300", hoverBg: "hover:bg-white/10", hoverBorder: "hover:border-white/30", glow: "hover:shadow-white/20" },
       },
       {
         id: "whatsapp",
         label: "WhatsApp",
-        href: "https://wa.me/919999999999",
+        href: "https://wa.me/919997874502",
         color: { icon: "text-emerald-400", hoverBg: "hover:bg-emerald-500/15", hoverBorder: "hover:border-emerald-400/60", glow: "hover:shadow-emerald-500/30" },
       },
       {
         id: "email",
         label: "Email",
-        href: "mailto:hello@zenovix.com",
+        href: "mailto:support.zenovix@gmail.com",
         color: { icon: "text-violet-400", hoverBg: "hover:bg-violet-500/15", hoverBorder: "hover:border-violet-400/60", glow: "hover:shadow-violet-500/30" },
       },
     ],
@@ -159,19 +159,19 @@ export const businessSocials: BusinessSocial[] = [
       {
         id: "instagram",
         label: "Instagram",
-        href: "https://instagram.com/quickpress",
+        href: "https://www.instagram.com/who_rishab_/",
         color: { icon: "text-pink-400", hoverBg: "hover:bg-pink-500/15", hoverBorder: "hover:border-pink-400/60", glow: "hover:shadow-pink-500/30" },
       },
       {
         id: "facebook",
         label: "Facebook",
-        href: "https://facebook.com/quickpress",
+        href: "https://www.facebook.com/share/1DGP84mESQ/",
         color: { icon: "text-blue-500", hoverBg: "hover:bg-blue-600/15", hoverBorder: "hover:border-blue-500/60", glow: "hover:shadow-blue-600/30" },
       },
       {
         id: "x",
         label: "X (Twitter)",
-        href: "https://x.com/quickpress",
+        href: "https://x.com/BeatGam04205970",
         color: { icon: "text-slate-300", hoverBg: "hover:bg-white/10", hoverBorder: "hover:border-white/30", glow: "hover:shadow-white/20" },
       },
       {
@@ -183,13 +183,13 @@ export const businessSocials: BusinessSocial[] = [
       {
         id: "whatsapp",
         label: "WhatsApp",
-        href: "https://wa.me/919999999998",
+        href: "https://wa.me/919997874502",
         color: { icon: "text-emerald-400", hoverBg: "hover:bg-emerald-500/15", hoverBorder: "hover:border-emerald-400/60", glow: "hover:shadow-emerald-500/30" },
       },
       {
         id: "email",
         label: "Email",
-        href: "mailto:hello@quickpress.in",
+        href: "mailto:quickpressfounder@gmail.com",
         color: { icon: "text-violet-400", hoverBg: "hover:bg-violet-500/15", hoverBorder: "hover:border-violet-400/60", glow: "hover:shadow-violet-500/30" },
       },
     ],
