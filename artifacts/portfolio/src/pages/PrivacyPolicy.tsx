@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Link } from 'wouter';
-import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { ArrowLeft } from 'lucide-react';
 
@@ -51,9 +50,7 @@ export function PrivacyPolicy() {
 
   return (
     <div className="bg-[#050505] min-h-screen text-slate-200 font-sans selection:bg-blue-500/30">
-      <Navbar />
-
-      <main className="pt-32 pb-20 px-6">
+      <main className="pt-16 pb-20 px-6">
         <div className="max-w-3xl mx-auto">
           {/* Back link */}
           <Link
