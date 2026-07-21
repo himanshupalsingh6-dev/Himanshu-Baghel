@@ -112,91 +112,144 @@ const currentlyLearning = [
   "Docker", "System Design", "Cloud Computing", "Scalable Software Architecture"
 ];
 
+/* ── Upgraded animation variants ── */
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.07 }
+    transition: { staggerChildren: 0.06, delayChildren: 0.05 }
   }
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.21, 1.02, 0.73, 1] } }
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+    scale: 0.92,
+    filter: 'blur(8px)',
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.65,
+      ease: [0.21, 1.02, 0.73, 1],
+    },
+  },
+};
+
+/* Clip-path wipe for section header text */
+const wipeVariants = {
+  hidden: { clipPath: 'inset(0 100% 0 0)', opacity: 0 },
+  show: {
+    clipPath: 'inset(0 0% 0 0)',
+    opacity: 1,
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] }
+  }
 };
 
 export function Skills() {
+  const headerRef = useRef(null);
   const ref = useRef(null);
   const learningRef = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const learningInView = useInView(learningRef, { once: true, margin: "-80px" });
+  const headerInView = useInView(headerRef, { once: true, margin: '-60px' });
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const learningInView = useInView(learningRef, { once: true, margin: '-80px' });
 
   return (
     <section id="skills" className="py-24 relative z-10 bg-[#050505]">
       <div className="container mx-auto px-6 max-w-7xl">
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-slate-400 uppercase tracking-widest mb-6">
+        {/* ── Header with clip-path wipe ── */}
+        <div ref={headerRef} className="mb-16 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={headerInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-slate-400 uppercase tracking-widest mb-6"
+          >
             <Sparkles className="w-3 h-3 text-blue-400" />
             Capabilities
-          </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Skills & Expertise</h2>
-          <p className="text-lg text-slate-400 max-w-xl">
-            A growing toolkit built through real-world projects, continuous learning, and a relentless drive to ship.
-          </p>
-        </motion.div>
+          </motion.div>
 
-        {/* Skill Cards Grid */}
+          <motion.h2
+            variants={wipeVariants}
+            initial="hidden"
+            animate={headerInView ? 'show' : 'hidden'}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="text-4xl md:text-5xl font-display font-bold text-white mb-4"
+          >
+            Skills & Expertise
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={headerInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
+            className="text-lg text-slate-400 max-w-xl"
+          >
+            A growing toolkit built through real-world projects, continuous learning, and a relentless drive to ship.
+          </motion.p>
+        </div>
+
+        {/* ── Skill Cards Grid ── */}
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "show" : "hidden"}
+          animate={isInView ? 'show' : 'hidden'}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {skillCategories.map((group, idx) => (
             <motion.div
               key={idx}
-              variants={itemVariants}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className={`glass-card p-6 group border ${group.border} hover:border-opacity-50 transition-all duration-300 bg-gradient-to-br ${group.gradient}`}
+              variants={cardVariants}
+              whileHover={{
+                y: -6,
+                scale: 1.02,
+                transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] }
+              }}
+              className={`glass-card p-6 group border ${group.border} hover:border-opacity-60 transition-colors duration-300 bg-gradient-to-br ${group.gradient} relative overflow-hidden`}
             >
-              {/* Card Header */}
-              <div className="flex items-center gap-3 mb-5">
+              {/* Subtle corner glow on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-white/5 to-transparent" />
+
+              <div className="flex items-center gap-3 mb-5 relative z-10">
                 <div className={`p-2.5 rounded-xl ${group.iconBg} ${group.iconColor} group-hover:scale-110 transition-transform duration-300`}>
                   {group.icon}
                 </div>
                 <h3 className="text-base font-semibold text-white">{group.category}</h3>
               </div>
 
-              {/* Skill Tags */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 relative z-10">
                 {group.items.map((skill, sIdx) => (
-                  <span
+                  <motion.span
                     key={sIdx}
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{
+                      duration: 0.35,
+                      delay: 0.3 + idx * 0.04 + sIdx * 0.03,
+                      ease: [0.22, 1, 0.36, 1]
+                    }}
                     className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium border ${group.tagColor} backdrop-blur-sm`}
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Currently Learning */}
+        {/* ── Currently Learning ── */}
         <motion.div
           ref={learningRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={learningInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          initial={{ opacity: 0, y: 40, scale: 0.97 }}
+          animate={learningInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           className="mt-10 glass-card p-8 border border-white/10 bg-gradient-to-br from-white/5 to-transparent"
         >
           <div className="flex items-center gap-3 mb-6">
@@ -219,9 +272,9 @@ export function Skills() {
             {currentlyLearning.map((item, idx) => (
               <motion.span
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={learningInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, delay: idx * 0.07 }}
+                initial={{ opacity: 0, y: 16, scale: 0.88 }}
+                animate={learningInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ duration: 0.45, delay: idx * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-amber-500/20 bg-amber-500/10 text-amber-300"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
