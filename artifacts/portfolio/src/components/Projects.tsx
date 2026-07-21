@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { ExternalLink, Github, Zap, Rocket, Globe, Bot, Layout } from 'lucide-react';
+import { ExternalLink, Zap, Rocket, Globe, Bot, Layout } from 'lucide-react';
 
 const projects = [
   {
@@ -130,22 +130,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 <h3 className="text-lg font-display font-bold text-white leading-tight">{project.title}</h3>
                 <p className="text-xs text-slate-500 mt-0.5 leading-snug">{project.subtitle}</p>
               </div>
-            </div>
-            <div className="flex gap-1.5 shrink-0">
-              <a
-                href="#"
-                data-testid={`link-github-${index}`}
-                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
-              >
-                <Github size={15} />
-              </a>
-              <a
-                href="#"
-                data-testid={`link-external-${index}`}
-                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
-              >
-                <ExternalLink size={15} />
-              </a>
             </div>
           </div>
 

@@ -66,7 +66,7 @@ export const businessSocials: BusinessSocial[] = [
     },
     primaryCta: {
       label: "Visit Website",
-      href: "https://zenovix.com",
+      href: "https://zenovixtech.online",
     },
     secondaryCta: {
       label: "Follow Us",
@@ -76,7 +76,7 @@ export const businessSocials: BusinessSocial[] = [
       {
         id: "website",
         label: "Website",
-        href: "https://zenovix.com",
+        href: "https://zenovixtech.online",
         color: { icon: "text-sky-400", hoverBg: "hover:bg-sky-500/15", hoverBorder: "hover:border-sky-400/60", glow: "hover:shadow-sky-500/30" },
       },
       {
@@ -165,7 +165,7 @@ export const businessSocials: BusinessSocial[] = [
       {
         id: "website",
         label: "Website",
-        href: "https://quickpress.in",
+        href: "https://quickpress.online",
         color: { icon: "text-sky-400", hoverBg: "hover:bg-sky-500/15", hoverBorder: "hover:border-sky-400/60", glow: "hover:shadow-sky-500/30" },
       },
       {
