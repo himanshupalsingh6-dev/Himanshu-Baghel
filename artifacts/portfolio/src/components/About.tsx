@@ -387,8 +387,8 @@ function AboutContent({ isInView }: { isInView: boolean }) {
       {/* CTA buttons */}
       <div className="gsap-line flex flex-wrap gap-3">
         <motion.a
-          href="/resume.pdf"
-          download
+          href="/resume.jpg"
+          download="Himanshu_Baghel_Resume.jpg"
           whileHover={{ scale: 1.04, y: -2 }}
           whileTap={{ scale: 0.97 }}
           className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 border border-blue-500 text-white text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/40"
