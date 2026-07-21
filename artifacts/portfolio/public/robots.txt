@@ -1,2 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /privacy-policy
+Disallow: /terms-and-conditions
+
+# Sitemaps
+Sitemap: https://himanshubaghel.online/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 10
