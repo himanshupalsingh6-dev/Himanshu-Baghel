@@ -166,12 +166,15 @@ export function Skills() {
             Capabilities
           </motion.div>
 
-          <motion.h2
-            variants={wipeVariants}
-            initial="hidden"
-            animate={headerInView ? 'show' : 'hidden'}
-            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-white mb-4"
+            <motion.h2
+              initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+              animate={
+                headerInView
+                  ? { clipPath: "inset(0 0% 0 0)", opacity: 1 }
+                  : { clipPath: "inset(0 100% 0 0)", opacity: 0 }
+              }
+              transition={{ duration: 0.75, delay: 0.1 }}
+              className="text-4xl md:text-5xl font-display font-bold text-white mb-4"
           >
             Skills & Expertise
           </motion.h2>
