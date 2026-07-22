@@ -170,6 +170,9 @@ importers:
       lightningcss:
         specifier: ^1.33.0
         version: 1.33.0
+      lightningcss-darwin-x64:
+        specifier: ^1.33.0
+        version: 1.33.0
       prettier:
         specifier: ^3.9.5
         version: 3.9.6
@@ -2415,6 +2418,12 @@ packages:
   leven@4.1.0:
     resolution: {integrity: sha512-KZ9W9nWDT7rF7Dazg8xyLHGLrmpgq2nVNFUckhqdW3szVP6YhCpp/RAnpmVExA9JvrMynjwSLVrEj3AepHR6ew==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
+  lightningcss-darwin-x64@1.33.0:
+    resolution: {integrity: sha512-Z5UPAxzrjlWNNyGy6i65cJzzvgJ5D3T6wMvs+gWpY9d7qRhANrxqAp6LhxIgZhWEw18RfJTGcRxjuLIBr+m8XQ==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [darwin]
 
   lightningcss-linux-x64-gnu@1.32.0:
     resolution: {integrity: sha512-V7Qr52IhZmdKPVr+Vtw8o+WLsQJYCTd8loIfpDaMRWGUZfBOYEJeyJIkqGIDMZPwPx24pUMfwSxxI8phr/MbOA==}
@@ -4986,6 +4995,8 @@ snapshots:
       react: 19.1.0
 
   leven@4.1.0: {}
+
+  lightningcss-darwin-x64@1.33.0: {}
 
   lightningcss-linux-x64-gnu@1.32.0:
     optional: true
