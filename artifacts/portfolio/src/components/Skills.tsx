@@ -159,7 +159,7 @@ export function Skills() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-slate-400 uppercase tracking-widest mb-6"
           >
             <Sparkles className="w-3 h-3 text-blue-400" />
@@ -182,7 +182,7 @@ export function Skills() {
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
             className="text-lg text-slate-400 max-w-xl"
           >
             A growing toolkit built through real-world projects, continuous learning, and a relentless drive to ship.
@@ -204,7 +204,7 @@ export function Skills() {
               whileHover={{
                 y: -6,
                 scale: 1.02,
-                transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] }
+                transition: { duration: 0.25, ease: "easeOut" }
               }}
               className={`glass-card p-6 group border ${group.border} hover:border-opacity-60 transition-colors duration-300 bg-gradient-to-br ${group.gradient} relative overflow-hidden`}
             >
@@ -227,7 +227,7 @@ export function Skills() {
                     transition={{
                       duration: 0.35,
                       delay: 0.3 + idx * 0.04 + sIdx * 0.03,
-                      ease: [0.22, 1, 0.36, 1]
+                      ease: "easeOut"
                     }}
                     className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium border ${group.tagColor} backdrop-blur-sm`}
                   >
@@ -244,7 +244,7 @@ export function Skills() {
           ref={learningRef}
           initial={{ opacity: 0, y: 40, scale: 0.97 }}
           animate={learningInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
           className="mt-10 glass-card p-8 border border-white/10 bg-gradient-to-br from-white/5 to-transparent"
         >
           <div className="flex items-center gap-3 mb-6">
@@ -269,7 +269,7 @@ export function Skills() {
                 key={idx}
                 initial={{ opacity: 0, y: 16, scale: 0.88 }}
                 animate={learningInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.45, delay: idx * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.45, delay: idx * 0.06, ease: "easeOut" }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border border-amber-500/20 bg-amber-500/10 text-amber-300"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
