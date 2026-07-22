@@ -141,14 +141,6 @@ const cardVariants = {
 };
 
 /* Clip-path wipe for section header text */
-const wipeVariants = {
-  hidden: { clipPath: 'inset(0 100% 0 0)', opacity: 0 },
-  show: {
-    clipPath: 'inset(0 0% 0 0)',
-    opacity: 1,
-    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] }
-  }
-};
 
 export function Skills() {
   const headerRef = useRef(null);
