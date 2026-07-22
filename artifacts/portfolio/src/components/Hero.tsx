@@ -62,10 +62,10 @@ export function Hero() {
 
   /* ── Floating card config ───────────────────── */
   const floatCards = [
-    { label: '3+', sub: 'Years Experience', color: 'text-white',       pos: 'top-1/4 left-[12%]',   deg: -6, delay: 1.5, floatDur: 4.2 },
-    { label: '10+', sub: 'Projects Built',   color: 'text-blue-400',   pos: 'top-1/3 right-[12%]',  deg:  4, delay: 1.7, floatDur: 5.1 },
-    { label: '2',   sub: 'Businesses',       color: 'text-purple-400', pos: 'bottom-1/4 left-[18%]', deg:  8, delay: 1.9, floatDur: 3.8 },
-    { label: '50+', sub: 'Happy Clients',    color: 'text-green-400',  pos: 'bottom-1/3 right-[18%]',deg: -4, delay: 2.1, floatDur: 4.6 },
+    { label: '3+', sub: 'Years Experience', color: 'text-white',       pos: 'top-[22%] left-[3%]',   deg: -6, delay: 1.5, floatDur: 4.2 },
+    { label: '10+', sub: 'Projects Built',   color: 'text-blue-400',   pos: 'top-[28%] right-[3%]',  deg:  4, delay: 1.7, floatDur: 5.1 },
+    { label: '2',   sub: 'Businesses',       color: 'text-purple-400', pos: 'bottom-[22%] left-[3%]', deg:  8, delay: 1.9, floatDur: 3.8 },
+    { label: '50+', sub: 'Happy Clients',    color: 'text-green-400',  pos: 'bottom-[28%] right-[3%]',deg: -4, delay: 2.1, floatDur: 4.6 },
   ];
 
   return (
@@ -194,20 +194,22 @@ export function Hero() {
       </motion.div>
 
       {/* ── Floating stat cards (desktop) ───────── */}
-      <div className="hidden lg:block absolute inset-0 pointer-events-none z-10">
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-[5]">
         {floatCards.map((card, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, scale: 0.75, filter: 'blur(6px)' }}
-            animate={[
-              { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { delay: card.delay, duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
-              { y: [0, -12, 0], transition: { delay: card.delay + 0.8, duration: card.floatDur, repeat: Infinity, ease: 'easeInOut' } },
-            ]}
+            initial={{ opacity: 0, scale: 0.75 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+            transition={{
+              opacity: { delay: card.delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+              scale:   { delay: card.delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+              y:       { delay: card.delay + 0.7, duration: card.floatDur, repeat: Infinity, ease: 'easeInOut' },
+            }}
             style={{ rotate: card.deg }}
-            className={`absolute ${card.pos} glass-card p-4 rounded-xl`}
+            className={`absolute ${card.pos} px-4 py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm`}
           >
-            <div className={`text-2xl font-display font-bold ${card.color}`}>{card.label}</div>
-            <div className="text-xs text-slate-400">{card.sub}</div>
+            <div className={`text-xl font-display font-bold ${card.color}`}>{card.label}</div>
+            <div className="text-xs text-slate-400 mt-0.5">{card.sub}</div>
           </motion.div>
         ))}
       </div>
