@@ -169,7 +169,7 @@ function PhotoCard() {
             {/* Profile image */}
             <img
               src={profileImg}
-              alt="Himanshu Baghel"
+              alt="Himanshu Baghel - Founder &amp; Developer"
               draggable={false}
               className="w-full h-full object-cover object-top select-none"
               style={{ aspectRatio: '3/4', display: 'block' }}
@@ -424,7 +424,7 @@ function AboutContent({ isInView }: { isInView: boolean }) {
           >
             <div className="absolute -left-[27px] top-1.5 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-[#050505] shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
             <div className="text-xs text-blue-400 font-mono mb-1">{item.year}</div>
-            <h4 className="text-base font-semibold text-white mb-0.5">{item.title}</h4>
+            <h3 className="text-base font-semibold text-white mb-0.5">{item.title}</h3>
             <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
           </motion.div>
         ))}

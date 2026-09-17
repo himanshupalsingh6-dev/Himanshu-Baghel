@@ -20,7 +20,7 @@ function Home() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
-    document.title = "Himanshu Baghel | Founder · Developer · Entrepreneur";
+    document.title = "Himanshu Baghel | Founder & Developer";
     document.documentElement.classList.add('dark');
 
     let meta = document.querySelector('meta[name="description"]');
@@ -29,7 +29,7 @@ function Home() {
       meta.setAttribute('name', 'description');
       document.head.appendChild(meta);
     }
-    meta.setAttribute('content', 'Portfolio of Himanshu Baghel - Founder, Developer, Entrepreneur, Innovator.');
+    meta.setAttribute('content', 'Official portfolio of Himanshu Baghel — Founder of Zenovix Technologies & QuickPress, and Full-Stack Developer crafting premium websites, web apps, and AI solutions.');
 
     const lenis = new Lenis({
       duration: 1.4,
