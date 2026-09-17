@@ -78,7 +78,7 @@ export function PrivacyPolicy() {
           {/* Intro */}
           <p className="text-slate-400 leading-relaxed mb-10">
             Your privacy matters. This policy explains what information is collected when you visit{' '}
-            <span className="text-white font-medium">himanshubaghel.com</span>, how it is used, and the
+            <span className="text-white font-medium">himanshubaghel.vercel.app</span>, how it is used, and the
             choices you have. This site is a personal portfolio — there are no user accounts, no
             advertisements, and no hidden tracking.
           </p>

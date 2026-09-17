@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://himanshu-baghel-api-server.vercel.app/sitemap.xml
+Sitemap: https://himanshubaghel.vercel.app/sitemap.xml
 

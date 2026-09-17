@@ -12,7 +12,7 @@ export function TermsAndConditions() {
   const sections = [
     {
       title: '1. Acceptance of Terms',
-      content: `By accessing and using this website (himanshubaghel.com), you accept and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use this website. These terms apply to all visitors and users of the site.`,
+      content: `By accessing and using this website (himanshubaghel.vercel.app), you accept and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use this website. These terms apply to all visitors and users of the site.`,
     },
     {
       title: '2. Use of This Website',
@@ -86,7 +86,7 @@ export function TermsAndConditions() {
           {/* Intro */}
           <p className="text-slate-400 leading-relaxed mb-10">
             Please read these Terms and Conditions carefully before using{' '}
-            <span className="text-white font-medium">himanshubaghel.com</span>. By browsing or
+            <span className="text-white font-medium">himanshubaghel.vercel.app</span>. By browsing or
             interacting with this site, you agree to these terms in full. This is a personal portfolio
             website operated by Himanshu Baghel.
           </p>
