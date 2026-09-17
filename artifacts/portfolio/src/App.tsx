@@ -17,7 +17,7 @@ import { TermsAndConditions } from './pages/TermsAndConditions';
 
 function Home() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 280, damping: 32, restDelta: 0.001 });
 
   useEffect(() => {
     document.title = "Himanshu Baghel | Founder & Developer";
@@ -32,21 +32,25 @@ function Home() {
     meta.setAttribute('content', 'Official portfolio of Himanshu Baghel — Founder of Zenovix Technologies & QuickPress, and Full-Stack Developer crafting premium websites, web apps, and AI solutions.');
 
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 0.85,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.0,
+      syncTouch: false,
     });
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);

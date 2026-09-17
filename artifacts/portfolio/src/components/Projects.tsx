@@ -108,13 +108,13 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 70, x: entryX, scale: 0.9, rotateX: 12, filter: 'blur(6px)' }}
-      whileInView={{ opacity: 1, y: 0, x: 0, scale: 1, rotateX: 0, filter: 'blur(0px)' }}
+      initial={{ opacity: 0, y: 35, x: entryX, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{
-        duration: 0.75,
-        delay: index * 0.09,
-        ease: [0.21, 1.02, 0.73, 1],
+        duration: 0.55,
+        delay: index * 0.06,
+        ease: [0.22, 1, 0.36, 1],
       }}
       style={{ perspective: 1200 }}
     >

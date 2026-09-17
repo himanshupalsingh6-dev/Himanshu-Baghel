@@ -83,7 +83,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased;
   }
   
   body {
@@ -112,6 +112,7 @@
 
 .glass-card {
   @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden rounded-2xl;
+  transform: translateZ(0);
 }
 
 .glass-card::after {
@@ -142,6 +143,8 @@
   justify-content: space-around;
   min-width: 100%;
   gap: 4rem;
+  will-change: transform;
+  transform: translateZ(0);
   animation: scrollX 30s linear infinite;
 }
 

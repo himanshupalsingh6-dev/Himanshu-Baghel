@@ -19,22 +19,21 @@ export function Hero() {
   const rawY2 = useTransform(scrollYProgress, [0, 1], [0, -90]);
   const rawOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
   const rawScale = useTransform(scrollYProgress, [0, 0.55], [1, 0.92]);
-  const y1 = useSpring(rawY1, { stiffness: 60, damping: 20 });
-  const y2 = useSpring(rawY2, { stiffness: 60, damping: 20 });
-  const contentOpacity = useSpring(rawOpacity, { stiffness: 80, damping: 25 });
-  const contentScale  = useSpring(rawScale,   { stiffness: 80, damping: 25 });
+  const y1 = useSpring(rawY1, { stiffness: 220, damping: 28 });
+  const y2 = useSpring(rawY2, { stiffness: 220, damping: 28 });
+  const contentOpacity = rawOpacity;
+  const contentScale = rawScale;
 
   /* ── GSAP char reveal ───────────────────────── */
   useEffect(() => {
     if (nameRef.current) {
       const chars = nameRef.current.querySelectorAll('.char');
       gsap.fromTo(chars,
-        { opacity: 0, y: 60, rotateX: -90, filter: 'blur(6px)' },
+        { opacity: 0, y: 60, rotateX: -90 },
         {
           opacity: 1,
           y: 0,
           rotateX: 0,
-          filter: 'blur(0px)',
           duration: 1.1,
           stagger: 0.045,
           ease: 'back.out(1.7)',
@@ -79,20 +78,20 @@ export function Hero() {
           style={{ y: y1 }}
           animate={{ scale: [1, 1.25, 1], opacity: [0.28, 0.48, 0.28], rotate: [0, 90, 0] }}
           transition={{ duration: 11, repeat: Infinity, ease: 'linear' }}
-          className="absolute -top-1/4 -left-1/4 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[130px]"
+          className="absolute -top-1/4 -left-1/4 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[130px] will-change-transform transform-gpu"
         />
         <motion.div
           style={{ y: y2 }}
           animate={{ scale: [1, 1.5, 1], opacity: [0.18, 0.36, 0.18], rotate: [0, -90, 0] }}
           transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[110px]"
+          className="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[110px] will-change-transform transform-gpu"
         />
         {/* extra subtle violet ring */}
         <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, -40]) }}
           animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.22, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-700/15 rounded-full blur-[120px]"
+          className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-violet-700/15 rounded-full blur-[120px] will-change-transform transform-gpu"
         />
       </div>
 
